@@ -1,7 +1,16 @@
-const hamburger = document.getElementById('hamburger')
 
+// Loader ANimation
+const preLoader = () => {
+  setTimeout(function load() {
+    document.body.classList.toggle('loader-animation')
+  }, 1000)
+  setTimeout(function load2() {
+    document.getElementById('loader').style.display = 'none'
+  }, 2000)
+}
 
 // Menu Slide In and Out Function
+const hamburger = document.getElementById('hamburger')
 hamburger.addEventListener('click', menu)
 function menu(e) {
   document.body.classList.toggle('nav-toggle')
@@ -11,17 +20,17 @@ function menu(e) {
 
 // Fetch And Render Posts
 const latest = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=599a7ed5c576465487287fd60285bde3',
-sport = 'https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=599a7ed5c576465487287fd60285bde3',
-tech = 'https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=599a7ed5c576465487287fd60285bde3',
-ent = 'https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=599a7ed5c576465487287fd60285bde3',
-world = 'https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=599a7ed5c576465487287fd60285bde3'
+  sport = 'https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=599a7ed5c576465487287fd60285bde3',
+  tech = 'https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=599a7ed5c576465487287fd60285bde3',
+  ent = 'https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=599a7ed5c576465487287fd60285bde3',
+  world = 'https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=599a7ed5c576465487287fd60285bde3'
 
 function fetchNews(url, src) {
   fetch(url)
     .then(res => res.json())
     .then(data => {
       console.log(data)
-      let art = data.articles 
+      let art = data.articles
       art.slice(0, 6).forEach(post => {
         // console.log(post)
         let output = ''
@@ -36,6 +45,9 @@ function fetchNews(url, src) {
                   </div>`
         document.getElementById(src).innerHTML += output
       })
+      if (data.status === 'ok') {
+        preLoader()
+      }
     })
     .catch(err => {
       console.log(err)
