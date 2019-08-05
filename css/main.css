@@ -73,6 +73,10 @@ div.header-item i#hamburger {
   position: relative;
   z-index: 1000000;
 }
+i#search {
+  position: relative;
+  z-index: 10;
+}
 div.header-item {
   display: flex;
   flex-wrap: nowrap;
@@ -111,6 +115,23 @@ div.sub-collection {
   margin: 1em 0;
 }
 body.nav-toggle div.nav {
+  transform: translateX(0);
+  z-index: 20;
+}
+div.search {
+  position: fixed;
+  top: 4em;
+  right: 0;
+  left: 0;
+  transform: translateX(100%);
+  transition: transform ease-in-out 250ms;
+}
+div.search form input {
+  /* border: none; */
+  padding: 1.5em;
+  width: 100%;
+}
+body.search-toggle div.search {
   transform: translateX(0);
 }
 body.loader-animation div#loader {

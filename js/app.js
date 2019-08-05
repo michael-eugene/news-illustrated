@@ -18,6 +18,15 @@ function menu(e) {
   e.target.classList.toggle('typcn-times')
 }
 
+// Search Slide In and Out FUnction
+const search = document.getElementById('search')
+search.addEventListener('click', searchArt)
+function searchArt(e) {
+  document.body.classList.toggle('search-toggle')
+  e.target.classList.toggle('typcn-zoom')
+  e.target.classList.toggle('typcn-times')
+}
+
 // Fetch And Render Posts
 const latest = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=599a7ed5c576465487287fd60285bde3',
   sport = 'https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=599a7ed5c576465487287fd60285bde3',
