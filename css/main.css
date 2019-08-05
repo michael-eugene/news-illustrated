@@ -119,6 +119,7 @@ body.loader-animation div#loader {
 
 div.container {
   padding: 0 1em;
+  margin: 1em 0;
 }
 h1.title-header {
   margin: .5em 0;
@@ -130,12 +131,15 @@ div.section-container {
   justify-content: center;
 }
 div.news-card {
-  max-width: 400px;
-  min-height: 350px;
-  margin: .5em;
+  max-width: 350px;
+  height: fit-content;
+  margin: 1em;
 }
 div.news-img {
-  height: 50%;
+  height: 170px;
+}
+div.news-text {
+  margin-top: .5em;
 }
 a.btn button {
   border: none;

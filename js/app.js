@@ -36,7 +36,7 @@ function fetchNews(url, src) {
         let output = ''
         output = `<div class="news-card">
                     <div class="news-img" style="background: url(${post.urlToImage});background-size: cover;background-position: center;"></div>
-                    <i class="typcn typcn-bookmark"></i>
+                    <!-- <i class="typcn typcn-bookmark"></i> -->
                     <div class="news-text">
                       <h3>${post.title}</h3>
                       <p>${post.description}</p>
