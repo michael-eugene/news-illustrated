@@ -1,5 +1,5 @@
 
-// Loader ANimation
+// Loader Animation
 const preLoader = () => {
   setTimeout(function load() {
     document.body.classList.toggle('loader-animation')
