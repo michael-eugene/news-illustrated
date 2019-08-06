@@ -11,12 +11,10 @@
   /* border: 1px solid red; */
   font-family: 'Karla', sans-serif;
 }
-
 h1,
 h2 {
   font-family: 'Abril Fatface', cursive;
 }
-
 /* Globals */
 ul li {
   list-style: none;
@@ -29,8 +27,6 @@ i.typcn {
   font-size: 1.5rem;
   cursor: pointer;
 }
-
-
 #loader {
   position: fixed;
   display: flex;
@@ -58,8 +54,6 @@ i.typcn {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
-
 /* Header */
 header {
   display: grid;
@@ -83,10 +77,6 @@ div.header-item {
   justify-content: center;
   align-items: center;
 }
-
-
-
-
 /* Navigation */
 div.nav {
   background: var(--pry);
@@ -171,11 +161,24 @@ a.btn button {
 p.link {
   text-align: right;
 }
-
-
-
+div#main-wrapper {
+  position: relative;
+  height: 2000px;
+}
+footer {
+  text-align: center;
+}
+div.btt {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: .5em;
+  margin: 1em;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  display: none;
+}
 @media only screen and (min-width: 550px) {
-  
   div.news-card {
     max-width: 350px;
     height: fit-content;
@@ -184,5 +187,4 @@ p.link {
   div.news-img {
     height: 200px;
   }
-
 }

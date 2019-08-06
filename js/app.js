@@ -1,4 +1,3 @@
-
 // Loader Animation
 const preLoader = () => {
   setTimeout(function load() {
@@ -7,6 +6,23 @@ const preLoader = () => {
   setTimeout(function load2() {
     document.getElementById('loader').style.display = 'none'
   }, 2000)
+}
+
+// Back To Top Function
+const btt = document.getElementById('btt')
+window.onscroll = function() {
+  scrollFunc()
+}
+function scrollFunc() {
+  if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+    btt.parentElement.style.display = 'block'
+  } else {
+    btt.parentElement.style.display = 'none'
+  }
+}
+btt.addEventListener('click', backToTop)
+function backToTop() {
+  window.scrollTo(0, 0)
 }
 
 // Menu Slide In and Out Function
@@ -64,7 +80,7 @@ function fetchNews(url, src) {
 }
 
 fetchNews(latest, 'breakingNews')
-fetchNews(sport, 'sportNews')
 fetchNews(tech, 'techNews')
 fetchNews(ent, 'entNews')
 fetchNews(world, 'worldNews')
+fetchNews(sport, 'sportNews')
