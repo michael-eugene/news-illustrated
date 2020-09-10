@@ -44,17 +44,18 @@ function searchArt(e) {
 }
 
 // Fetch And Render Posts
-const latest = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=599a7ed5c576465487287fd60285bde3',
-  sport = 'https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=599a7ed5c576465487287fd60285bde3',
-  tech = 'https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=599a7ed5c576465487287fd60285bde3',
-  ent = 'https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=599a7ed5c576465487287fd60285bde3',
-  world = 'https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=599a7ed5c576465487287fd60285bde3'
+const latest = 'https://newsapi.org/v2/top-headlines?language=en&category=business&apiKey=4d20ffa98f524a59b78898e64de3393f'
+  sport = 'https://newsapi.org/v2/top-headlines?language=en&category=sports&apiKey=4d20ffa98f524a59b78898e64de3393f',
+  tech = 'https://newsapi.org/v2/top-headlines?language=en&category=technology&apiKey=4d20ffa98f524a59b78898e64de3393f',
+  ent = 'https://newsapi.org/v2/top-headlines?language=en&category=entertainment&apiKey=4d20ffa98f524a59b78898e64de3393f',
+  world = 'https://newsapi.org/v2/top-headlines?language=en&category=general&apiKey=4d20ffa98f524a59b78898e64de3393f'
 
-function fetchNews(url, src) {
+const fetchNews = (url, src) => {
   fetch(url)
     .then(res => res.json())
+    // .then(data => console.log(data))
     .then(data => {
-      console.log(data)
+      // console.log(data)
       let art = data.articles
       art.slice(0, 6).forEach(post => {
         // console.log(post)
